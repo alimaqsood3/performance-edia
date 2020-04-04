@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="public\style2.css">
+    <link rel="stylesheet" href="public\style2.js">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <!-- IMPORTANT SETUP -->
+    <!-- Change the YOUR_API_KEY section of the config URL to match your API key --> 
+    <meta
+      name="simplewebrtc-config-url"
+      content="https://api.simplewebrtc.com/config/guest/ab4e14f76d0c139c41d4c576"
+      
+    />
+    <title>Performance Media</title>
+    <style>
+      body {
+        margin: 1px;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        min-height: 100%;
+        overflow: hidden;
+        background-color: black;
+        font-family: -apple-system,
+          BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+          'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #4d5659;
+        text-rendering: optimizeSpeed;
+      }
+
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
+      }
+
+      [hidden] {
+        display: none;
+      }
+
+      a {
+        background-color: transparent;
+        text-decoration: none;
+      }
+
+      a:active,
+      a:hover {
+        outline: 0;
+      }
+
+      img {
+        border: 0;
+      }
+
+      svg:not(:root) {
+        overflow: hidden;
+      }
+
+      button,
+      input {
+        color: inherit;
+        font: inherit;
+        margin: 0;
+      }
+
+      button {
+        overflow: visible;
+      }
+
+      button {
+        text-transform: none;
+      }
+
+    
+
+     
+
+      button::-moz-focus-inner,
+      input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+      }
+
+      input {
+        line-height: normal;
+      }
+
+      *,
+      *:after,
+      *:before {
+        box-sizing: border-box;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+
+      img,
+      video {
+        max-width: 100%;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    
+      
+      .container {
+        width: 100%;
+        height: 100%;
+       
+        
+      }
+
+
+
+
+      body, html {
+        height: 100%;
+        
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      .bg-img {
+        /* The image used */
+        background-image: url("public/new.jpg");
+      
+       height: 600px;
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      
+      /* Add styles to the form container */
+    
+      
+
+      .example_e {
+        border: none;
+        background: #141414;
+        color: #ee1414 !important;
+        font-weight: 100;
+        padding: 20px;
+        text-transform: uppercase;
+        border-radius: 6px;
+        margin-top: 20px;
+        display: inline-block;
+        transition: all 0.3s ease 0s;
+        }
+
+
+
+        .example_e:hover {
+          color: red !important;
+          font-weight: 700 !important;
+          letter-spacing: 3px;
+          background: none;
+          -webkit-box-shadow: 0px 5px 40px -10px rgba(250, 2, 2, 0.57);
+          -moz-box-shadow: 0px 5px 40px -10px rgba(226, 27, 27, 0.57);
+         
+          }
+
+
+
+
+
+
+
+    
+    </style>
+  </head>
+  <body>
+    
+    <noscript>
+  
+    </noscript>
+    <img src="public/logo.jpg" style="width: 300px;">
+      <div id="root"></div>
+      
+    <template id="haircheck-header">
+      <div>
+      <h2 style="text-align: center">Ready to join a video chat?</h2>
+
+    </template>
+    <template id="empty-peer-grid">
+      <h2 style="text-align: center; color: rgba(68, 68, 68, 0.25)">
+        There isn't anyone here (yet!)
+      </h2>
+    </template>
+    <template id="empty-roster">
+      <div></div>
+    </template>
+ 
+ <template id="homepage">
+      <div class="container">
+       <!-- <div style="background-image:url(public/new.jpg);width:500px;height:500px">-->
+        <div class="bg-img">
+          <h1 style="text-align: center; color: #00b0e9">ENTER your room name</h1>
+<br><br><br><br>
+        <form  method="GET" action="/">
+ <span style="width: 400px;margin-top:00px"><span class="domain">localhost/</span><input
+              type="text"
+              name="room"
+              placeholder="choose a room name"
+             /></span>
+          
+<div class="button_cont" align="center"><button class="example_e"  type="submit">START ROOM</button></div>
+
+         
+        </form>
+      </div>
+      </div>
+    
+    </template>
+ 
+    <script type="text/javascript">
+      const params = new URLSearchParams(window.location.search);
+      SimpleWebRTC.run({
+        roomName: params.get('room'),
+        root: document.getElementById('root'),
+        gridPlaceholder: () => SimpleWebRTC.loadTemplate('empty-peer-grid'),
+        haircheckHeaderPlaceholder: () =>
+          SimpleWebRTC.loadTemplate('haircheck-header'),
+        emptyRosterPlaceholder: () => SimpleWebRTC.loadTemplate('empty-roster'),
+        homepagePlaceholder: () => SimpleWebRTC.loadTemplate('homepage')
+      });
+    </script>
+  </body>
+</html>

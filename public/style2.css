@@ -1,0 +1,94 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* zocial */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+
+h2 {
+  color:rgba(255,255,255,.8);
+  margin-left:12px;
+}
+
+body {
+  background: #00b0e9;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+form  {
+  margin-top: 0px;
+  margin-left: 370px;
+  max-width: 600px;
+  padding: 50px;
+border-radius:60px;
+ 
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+
+}
+
+input {
+  padding: 16px;
+  border-radius:7px;
+  border:0px;
+  background: rgba(255,255,255,.2);
+  display: block;
+  margin: 15px;
+
+  width: 300px;  
+  color:#00b0e9;
+  font-size:18px;
+  height: 54px;
+}
+
+input:focus  {
+  outline-color: rgba(0,0,0,0);
+  background: black;
+  color: #00b0e9;
+  border-color: #00b0e9;
+}
+
+#id_btn {
+  float:right;
+  height: 121px;
+  width: 50px;
+  border: 3px;
+  background: #00b0e9;
+  border-radius:7px;
+  padding: 10px;
+  color:rgb(2, 1, 1);
+  font-size:22px;
+}
+
+
+
+.inputPassIcon {
+  position:absolute;
+  top:136px;
+  right: 80px;
+  
+  color:rgb(216, 24, 24);
+}
+
+input::-webkit-input-placeholder {
+  color: #00b0e9;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #00b0e9;
+}
